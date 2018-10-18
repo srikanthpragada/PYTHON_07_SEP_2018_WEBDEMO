@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Demo App</title>
+</head>
+<body>
+<h1>About Demo</h1>
+This is an application used to demonstrate the following topics in Demo Framework.
+<p/>
+We user Django Framework Version : {{info.version}}
+
+<ul>
+     {% for topic in info.topics %}
+        <li>{{topic}}</li>
+     {% endfor %}
+</ul>
+<hr/>
+Trainer : {{trainer}}
+
+
+</body>
+</html>
