@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select City</title>
+</head>
+<body>
+<h2>Select City</h2>
+<form method="post">
+    {% csrf_token %}
+    City :
+    <select name="city">
+        <option>Mumbai</option>
+        <option>Delhi</option>
+        <option>Chennai</option>
+        <option>Vizag</option>
+    </select>
+    <p/>
+    <input type="submit" />
+</form>
+
+</body>
+</html>
