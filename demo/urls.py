@@ -9,5 +9,6 @@ urlpatterns = [
     path("interest/", views.interest),
     path("movies/", cookie_views.list_movies),
     path("selectcity/", cookie_views.select_city),
+    path("session_names/", cookie_views.session_names),
 
 ]
