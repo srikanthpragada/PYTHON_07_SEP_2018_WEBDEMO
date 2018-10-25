@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Information
-
+from . forms import PersonForm
 
 # Create your views here.
 
@@ -36,3 +36,20 @@ def interest(request):
                   {"amount": amount,
                    "period": period,
                    "interest" : interest_amount})
+
+
+def person_details(request):
+    if request.method == "POST":
+        f = PersonForm(request.POST)  # Bind request parameters to fields
+        if f.is_valid():
+            name = f.cleaned_data['fullname']
+            email = f.cleaned_data['email']
+            mobile = f.cleaned_data['mobile']
+            age = f.cleaned_data['age']
+            print(name,email,mobile,age)
+        else:
+            print("Invalid Data")
+    else:
+        f = PersonForm()   # Unbound form
+
+    return render(request,'person_details.html',{'form' : f})
