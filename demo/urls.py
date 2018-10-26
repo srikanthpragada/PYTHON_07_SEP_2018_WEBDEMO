@@ -13,5 +13,6 @@ urlpatterns = [
     path("person/", views.person_details),
     path("list_publishers/", publisher_views.list),
     path("add_publisher/", publisher_views.add),
+    path("delete_publisher/<int:pubid>", publisher_views.delete),
 
 ]
