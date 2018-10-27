@@ -1,0 +1,13 @@
+{% extends "publisher/base.html" %}
+{% block content%}
+<h2>Add Publisher</h2>
+<form method="post" novalidate>
+    {% csrf_token %}
+    <table>
+        {{form}}
+    </table>
+    <p/>
+    <input type="submit" value="Add Publisher" />
+</form>
+<h4>{{message}}</h4>
+{% endblock %}

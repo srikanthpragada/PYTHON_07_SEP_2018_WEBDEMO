@@ -1,7 +1,7 @@
 
 from django.contrib import admin
 from django.urls import path
-from . import views, cookie_views, publisher_views
+from . import views, cookie_views, publisher_views, book_views
 
 urlpatterns = [
     path("index/", views.index),
@@ -14,5 +14,6 @@ urlpatterns = [
     path("list_publishers/", publisher_views.list),
     path("add_publisher/", publisher_views.add),
     path("delete_publisher/<int:pubid>", publisher_views.delete),
+    path("list_books/", book_views.list),
 
 ]
