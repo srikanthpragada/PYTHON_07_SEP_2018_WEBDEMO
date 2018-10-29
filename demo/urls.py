@@ -15,5 +15,7 @@ urlpatterns = [
     path("add_publisher/", publisher_views.add),
     path("delete_publisher/<int:pubid>", publisher_views.delete),
     path("list_books/", book_views.list),
-
+    path("add_book/", book_views.add),
+    path("delete_book/<int:bookid>", book_views.delete),
+    path("edit_book/<int:bookid>", book_views.edit),
 ]

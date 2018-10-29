@@ -3,26 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Books</title>
-    <style>
-        .banner
-        {
-           font-family : Arial;
-           font-size:30pt;
-           color:white;
-           background-color:maroon;
-        }
-        .menu {
-           font-family : verdana;
-           font-size:12pt;
-           font-weight:bold;
-        }
-    </style>
+    <link rel="stylesheet" href="/static/styles.css" />
 </head>
 <body>
 <div  class="banner">Books</div>
 <div style="background-color:silver;padding-top:10px;padding-bottom:10px" class="menu">
     <a href="/demo/list_books">List</a>
+    &nbsp;
     <a href="/demo/add_book">Add</a>
+    &nbsp;
+    <a href="/demo/search_books">Search</a>
 </div>
 
 {% block content %}

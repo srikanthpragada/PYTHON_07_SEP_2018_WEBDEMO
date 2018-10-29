@@ -1,5 +1,5 @@
 import django.forms as forms
-from . models import Book
+from .models import Book
 
 
 class PersonForm(forms.Form):
@@ -14,7 +14,7 @@ class AddPublisherForm(forms.Form):
     website = forms.CharField(max_length=50, required=True, label="Publisher Website")
 
 
-class BookForm(forms.ModelForm):
+class AddBookForm(forms.ModelForm):
     class Meta:
         model = Book
         fields = '__all__'
