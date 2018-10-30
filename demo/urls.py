@@ -1,7 +1,7 @@
 
 from django.contrib import admin
 from django.urls import path
-from . import views, cookie_views, publisher_views, book_views
+from . import views, cookie_views, publisher_views, book_views, ajax_views
 
 urlpatterns = [
     path("index/", views.index),
@@ -18,4 +18,7 @@ urlpatterns = [
     path("add_book/", book_views.add),
     path("delete_book/<int:bookid>", book_views.delete),
     path("edit_book/<int:bookid>", book_views.edit),
+    path("ajax_demo", ajax_views.demo),
+    path("ajax_now", ajax_views.now),
+    path("ajax_avg_price", ajax_views.average_price),
 ]

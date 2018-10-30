@@ -36,21 +36,22 @@ def delete(request, bookid):
 def edit(request, bookid):
     message = ''
     if request.method == "POST":
-        f = AddBookForm(request.POST)
-        if f.is_valid():
             try:
                 book = Book.objects.get(id=bookid)
-                book.title = f.cleaned_data["title"]
-                book.price = f.cleaned_data["price"]
-                book.pubid = f.cleaned_data["pubid"]
-                book.save()  # Update table
-                message = "Updated book successfully!"
+                f = AddBookForm(request.POST, instance=book)
+                if f.is_valid():
+                # book.title = f.cleaned_data["title"]
+                # book.price = f.cleaned_data["price"]
+                # book.pubid = f.cleaned_data["pubid"]
+                    book.save()  # Update table
+                    message = "Updated book successfully!"
             except:
                 message = f"Error during updation of book - {bookid}"
     else:
         try:
             book = Book.objects.get(id=bookid)
-            f = AddBookForm({'title': book.title, 'price': book.price, 'pubid': book.pubid})
+            # f = AddBookForm({'title': book.title, 'price': book.price, 'pubid': book.pubid})
+            f = AddBookForm(instance = book)
         except:
             message = f"Book [{bookid}] was not found!"
 
