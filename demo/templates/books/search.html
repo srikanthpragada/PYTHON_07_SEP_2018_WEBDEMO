@@ -1,0 +1,23 @@
+{% extends "books/base.html" %}
+{% block content%}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    function search() {
+        $.get("/demo/search_books?title=" + $("#title").val(),null,showBooks);
+    }
+    function showBooks(books) {
+        $("#books").html("");
+        $.each(books,
+          function(idx,book) {
+             $("#books").append("<li>"  + book.title + "</li>");
+          }
+        );
+    }
+</script>
+<h2>Search Books</h2>
+Title : <input type="text" id="title" />
+<button onclick="search()">Search</button>
+<ul id="books">
+
+</ul>
+{% endblock %}
