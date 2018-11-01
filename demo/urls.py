@@ -2,6 +2,7 @@
 from django.contrib import admin
 from django.urls import path
 from . import views, cookie_views, publisher_views, book_views, ajax_views, class_views
+from . import rest_views
 
 urlpatterns = [
     path("index/", views.index),
@@ -25,5 +26,6 @@ urlpatterns = [
     path("ajax_avg_price", ajax_views.average_price),
     path("aboutus", class_views.AboutView.as_view()),
     path("books", class_views.ListBooks.as_view()),
+    path('rest/books/', rest_views.list_books),
 
 ]
